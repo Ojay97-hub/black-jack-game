@@ -14,20 +14,16 @@ import random
 
 
 def display_rules():
-    # aware of the amount of prints - was to try and fix the long line issue
     print("WELCOME TO BLACK JACK!\n")
     print("RULES: ")
-    print("To win and beat the dealer you need")
-    print("to get to 21 without going over.")
+    print("To win and beat the dealer you need to get to 21 without going over.")
     print("Card values of King, Queen, and Jack are worth 10.")
-    print("Ace can be worth")
-    print("either 1 or 11 and the other cards")
-    print("are worth their presented number.")
+    print("Ace can be worth either 1 or 11")
+    print("other cards are worth their presented number.")
     print("Hit will grant you another card.")
     print("Stand will keep your current hand.")
     print("The dealer will hit until they reach 17 or higher.")
-    print("If you and the dealer tie,")
-    print("this is called a push and no one wins.\n")
+    print("If you and the dealer tie, this is called a push and no one wins.\n")
     create_deck()
 
 
@@ -42,7 +38,8 @@ def create_deck():
     values = ['ace', 'king', 'queen', 'jack', '10', '9',
               '8', '7', '6', '5', '4', '3', '2']
     suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
-    deck = [value + ' of ' + suit for value in values for suit in suits]
+    # making the 52 cards
+    deck = [{'value': value, 'suit': suit} for value in values for suit in suits]
     random.shuffle(deck)
     deal_cards(deck)
     return deck
@@ -68,15 +65,16 @@ def calculate_hand(hand):
             total += 11
         else:
             total += int(card['value'])
-        while total > 21 and num_aces:
-            total -= 10
-            num_aces -= 1
-        return total
+    while total > 21 and num_aces:
+        total -= 10
+        num_aces -= 1
+    return total
 
 
 """
 - This deal_cards function is to deal cards to player and dealer
 - List manipulation is applied
+- results are printed so that user knows they have been dealt
 
 """
 
@@ -88,11 +86,25 @@ def deal_cards(deck, nums_cards=2):
     for _ in range(nums_cards):
         player_hand.append(deck.pop())
         dealer_hand.append(deck.pop())
+    #  print the dealers hand so that the user can see
+    print("Dealer's hand:")
+    for card in dealer_hand:
+        print(f"{card['value']} of {card['suit']}")
+    # print the players hand so that they know their values
+    print("\nYour hand:")
+    for card in player_hand:
+        print(f"{card['value']} of {card['suit']}")
+    return player_hand, dealer_hand
 
 
-# def players_turn():
+"""
+- This is the dealers turn functions
+
+"""
 
 # def dealers_turn():
+
+# def players_turn:
 
 # def calculate_winner():
 
@@ -104,9 +116,9 @@ def deal_cards(deck, nums_cards=2):
 # main function to start game
 def main():
     display_rules()
-    create_deck()
-    calculate_hand()
-    deal_cards()
+#     create_deck()
+#     calculate_hand()
+#     deal_cards()
 
 
 main()
