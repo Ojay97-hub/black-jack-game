@@ -173,7 +173,35 @@ def calculate_winner(player_hand, dealer_hand):
     else:
         return "dealer"
 
-# def show_winner():
+
+"""
+- Displaying the winner function
+- Shows dealers hand total and players hand total
+- Then announces Winner or announces Draw
+
+"""
+
+
+def show_winner(player_hand, dealer_hand):
+    player_total = calculate_hand(player_hand)
+    dealer_total = calculate_hand(dealer_hand)
+# shows the dealers hand total
+    print("\nDealer's hand:")
+    for card in dealer_hand:
+        print(f"{card['value']} of {card['suit']}")
+    print("Dealer's total: ", dealer_total)
+# shows the player hands total
+    print("\nYour hand:")
+    for card in player_hand:
+        print(f"{card['value']} of {card['suit']}")
+    print("Your total: ", player_total)
+# Displays who the winner is
+    winner = calculate_winner(player_hand, dealer_hand)
+    if winner == "push":
+        print("It's a push! Go again to get a winner!.")
+    else:
+        print(f"The winner is {winner.capitalize()}!")
+
 
 # def play_again():
 
