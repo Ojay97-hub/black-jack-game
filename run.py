@@ -16,14 +16,14 @@ import random
 def display_rules():
     print("WELCOME TO BLACK JACK!\n")
     print("RULES: ")
-    print("To win and beat the dealer you need to get to 21 without going over.")
-    print("Card values of King, Queen, and Jack are worth 10.")
-    print("Ace can be worth either 1 or 11.")
-    print("Other cards are worth their presented number.")
-    print("Hit will grant you another card.")
-    print("Stand will keep your current hand.")
-    print("The dealer will hit until they reach 17 or higher.")
-    print("If you and the dealer tie, this is called a push and no one wins.\n")
+    print("- To win and beat the dealer you need to get to 21 without going over.")
+    print("- Card values of King, Queen, and Jack are worth 10.")
+    print("- Ace can be worth either 1 or 11.")
+    print("- Other cards are worth their presented number.")
+    print("- Hit will grant you another card.")
+    print("- Stand will keep your current hand.")
+    print("- The dealer will hit until they reach 17 or higher.")
+    print("- If you and the dealer tie, this is called a push and no one wins.\n")
     create_deck()
 
 
@@ -147,7 +147,31 @@ def players_turn(deck, player_hand):
         else:
             print("Invalid input. Please enter 'h' to hit or 's' to stand.")
 
-# def calculate_winner():
+
+"""
+- This calculates the winner using if/else statements
+
+"""
+
+
+def calculate_winner(player_hand, dealer_hand):
+    player_total = calculate_hand(player_hand)
+    dealer_total = calculate_hand(dealer_hand)
+    # if players hand is greater than 21 = dealer is winner
+    if player_total > 21:
+        return "dealer"
+    # if dealers hand is greater than 21 = player is winner
+    elif dealer_total > 21:
+        return "player"
+    # if totals are the same result = push/draw
+    elif player_total == dealer_total:
+        return "push"
+    # if player total greater than dealer total = player
+    elif player_total > dealer_total:
+        return "player"
+    # vice versa for dealer
+    else:
+        return "dealer"
 
 # def show_winner():
 
