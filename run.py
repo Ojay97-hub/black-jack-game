@@ -24,7 +24,7 @@ def display_rules():
     print("- Stand will keep your current hand.")
     print("- The dealer will hit until they reach 17 or higher.")
     print("- If you and the dealer tie, this is called a push and no one wins.\n")
-    create_deck()
+    # create_deck()
 
 
 """
@@ -41,7 +41,7 @@ def create_deck():
     deck = [{'value': value, 'suit': suit} for value in values for suit in suits]
     # shuffles the deck
     random.shuffle(deck)
-    deal_cards(deck)
+    # deal_cards(deck)
     return deck
 
 
@@ -96,7 +96,7 @@ def deal_cards(deck, nums_cards=2):
     for card in player_hand:
         print(f"{card['value']} of {card['suit']}")
     # call dealers turn
-    dealers_turn(deck, dealer_hand)
+    # dealers_turn(deck, dealer_hand)
     return player_hand, dealer_hand
 
 
@@ -112,8 +112,6 @@ def dealers_turn(deck, dealer_hand):
     # if dealers hand is less than 17 dealer will hit
     while calculate_hand(dealer_hand) < 17:
         dealer_hand.append(deck.pop())
-    # calling players turn
-    players_turn(deck, dealer_hand)
     return dealer_hand
 
 
@@ -126,7 +124,7 @@ def dealers_turn(deck, dealer_hand):
 """
 
 
-def players_turn(deck, player_hand):
+def players_turn(deck, player_hand, dealer_hand):
     while True:
         action = input("Do you want to hit or stand? (h/s): ").lower()
         if action == 'h':
@@ -139,7 +137,7 @@ def players_turn(deck, player_hand):
                 # this calculates if players hand is greater than 21 = bust
             if calculate_hand(player_hand) > 21:
                 print("You busted! Dealer wins.")
-                return player_hand
+                return "busted"
                 # if player selects "s" then current hand is held
         elif action == 's':
             return player_hand
@@ -208,12 +206,14 @@ def show_winner(player_hand, dealer_hand):
 
 # main function to start game
 def main():
-    display_rules()
-    # create the deck
-    # create_deck()
-    # calculate_hand()
-    # deal_cards()
-    # players_turn()
+    while True:
+        display_rules()
+        deck = create_deck()
+        player_hand, dealer_hand = deal_cards(deck)
+        player_hand = players_turn(deck, player_hand, dealer_hand)
+        if calculate_hand(player_hand) <= 21:
+            dealer_hand = dealers_turn(deck, dealer_hand)
+            show_winner(player_hand, dealer_hand)
 
 
 main()
