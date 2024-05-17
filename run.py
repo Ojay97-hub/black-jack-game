@@ -18,7 +18,7 @@ def display_rules():
     print("RULES: ")
     print("To win and beat the dealer you need to get to 21 without going over.")
     print("Card values of King, Queen, and Jack are worth 10.")
-    print("Ace can be worth either 1 or 11")
+    print("Ace can be worth either 1 or 11.")
     print("other cards are worth their presented number.")
     print("Hit will grant you another card.")
     print("Stand will keep your current hand.")
@@ -40,6 +40,7 @@ def create_deck():
     suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
     # making the 52 cards
     deck = [{'value': value, 'suit': suit} for value in values for suit in suits]
+    # shuffles the deck
     random.shuffle(deck)
     deal_cards(deck)
     return deck
@@ -64,6 +65,7 @@ def calculate_hand(hand):
             num_aces += 1
             total += 11
         else:
+            # handles the ace if total is greater than 21
             total += int(card['value'])
     while total > 21 and num_aces:
         total -= 10
@@ -98,11 +100,20 @@ def deal_cards(deck, nums_cards=2):
 
 
 """
-- This is the dealers turn functions
+- This is the dealers turn function
+- While loop
+- Appending the deck 
 
 """
 
-# def dealers_turn():
+
+def dealers_turn(deck, dealer_hand):
+    # if dealers hand is less than 17 dealer will hit
+    while calculate_hand(dealer_hand) < 17:
+        dealer_hand.append(deck.pop())
+    return dealer_hand
+
+
 
 # def players_turn:
 
