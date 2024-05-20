@@ -201,19 +201,36 @@ def show_winner(player_hand, dealer_hand):
         print(f"The winner is {winner.capitalize()}!")
 
 
-# def play_again():
+"""
+- function to play again
+- asks if player wants to play again 
+
+"""
+
+
+def play_again():
+    while True:
+        again = input("Do you want to play again? (y/n): ").lower()
+        if again == 'y':
+            return True
+        elif again == 'n':
+            return False
+        else:
+            print("Invalid input. Please enter 'y' for yes or 'n' for no.")
 
 
 # main function to start game
 def main():
+    display_rules()
     while True:
-        display_rules()
         deck = create_deck()
         player_hand, dealer_hand = deal_cards(deck)
         player_hand = players_turn(deck, player_hand, dealer_hand)
         if calculate_hand(player_hand) <= 21:
             dealer_hand = dealers_turn(deck, dealer_hand)
             show_winner(player_hand, dealer_hand)
+        if not play_again():
+            break
 
 
 main()
