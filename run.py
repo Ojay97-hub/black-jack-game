@@ -16,14 +16,16 @@ import random
 def display_rules():
     print("WELCOME TO BLACK JACK!\n")
     print("RULES: ")
-    print("- To win and beat the dealer you need to get to 21 without going over.")
+    print("- To win and beat the dealer you need to get to 21 "
+          "without going over.")
     print("- Card values of King, Queen, and Jack are worth 10.")
     print("- Ace can be worth either 1 or 11.")
     print("- Other cards are worth their presented number.")
     print("- Hit will grant you another card.")
     print("- Stand will keep your current hand.")
     print("- The dealer will hit until they reach 17 or higher.")
-    print("- If you and the dealer tie, this is called a push and no one wins.\n")
+    print("- If you and the dealer tie, this is called a push "
+          "and no one wins.\n")
     # create_deck()
 
 
@@ -35,10 +37,12 @@ def display_rules():
 
 
 def create_deck():
-    values = ['Ace', 'King', 'Queen', 'Jack', '10', '9', '8', '7', '6', '5', '4', '3', '2']
+    values = ['Ace', 'King', 'Queen', 'Jack', '10', '9', '8', '7', '6', '5',
+              '4', '3', '2']
     suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
     # making the 52 cards
-    deck = [{'value': value, 'suit': suit} for value in values for suit in suits]
+    deck = [{'value': value, 'suit': suit}
+            for value in values for suit in suits]
     # shuffles the deck
     random.shuffle(deck)
     # deal_cards(deck)
@@ -58,6 +62,7 @@ def calculate_hand(hand):
     total = 0
     num_aces = 0
     for card in hand:
+        print(card)
         if card['value'] in ['King', 'Queen', 'Jack']:
             total += 10
         elif card['value'] == 'Ace':
@@ -137,7 +142,7 @@ def players_turn(deck, player_hand, dealer_hand):
                 # this calculates if players hand is greater than 21 = bust
             if calculate_hand(player_hand) > 21:
                 print("You busted! Dealer wins.")
-                return "busted"
+                # return "busted" - THIS CAUSED AN ISSUE
                 # if player selects "s" then current hand is held
         elif action == 's':
             return player_hand
@@ -203,7 +208,7 @@ def show_winner(player_hand, dealer_hand):
 
 """
 - function to play again
-- asks if player wants to play again 
+- asks if player wants to play again
 
 """
 
@@ -220,6 +225,7 @@ def play_again():
 
 
 # main function to start game
+# if __name__ == "__main__"
 def main():
     display_rules()
     while True:
