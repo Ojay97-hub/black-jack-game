@@ -1,3 +1,8 @@
+# importing colorama to add colour to text
+import colorama
+from colorama import Fore, Back, Style
+colorama.init(autoreset=True)
+
 # import random for shuffling of cards
 import random
 
@@ -140,7 +145,7 @@ def players_turn(deck, player_hand, dealer_hand):
                 print(f"{card['value']} of {card['suit']}")
                 # this calculates if players hand is greater than 21 = bust
             if calculate_hand(player_hand) > 21:
-                print("You busted! Dealer wins.")
+                print(Fore.RED + "You busted! Dealer wins.")
                 if not play_again():
                     print("\nThanks for playing this Black Jack Game!")
                     exit()
