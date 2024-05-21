@@ -6,11 +6,6 @@ from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 
 
-# Using balsamiq I have created a function flow for the game
-# functions follow the logic of each stage of the game
-# I have added the function layout below
-# I have added docstrings above each function for description
-
 """
 - Display's the rules of the game to the user.
 - The function uses primarily print statements.
@@ -31,7 +26,7 @@ def display_rules():
     print("- The dealer will hit until they reach 17 or higher.")
     print("- If you and the dealer tie, this is called a push "
           "and no one wins.\n")
-    # create_deck()
+    
 
 
 """
@@ -50,7 +45,6 @@ def create_deck():
             for value in values for suit in suits]
     # shuffles the deck
     random.shuffle(deck)
-    # deal_cards(deck)
     return deck
 
 
@@ -104,8 +98,6 @@ def deal_cards(deck, nums_cards=2):
     print(Fore.GREEN + "\nYour hand 🫣 : ")
     for card in player_hand:
         print(f"{card['value']} of {card['suit']}")
-    # call dealers turn
-    # dealers_turn(deck, dealer_hand)
     return player_hand, dealer_hand
 
 
@@ -147,13 +139,12 @@ def players_turn(deck, player_hand, dealer_hand):
                 # this calculates if players hand is greater than 21 = bust
             if calculate_hand(player_hand) > 21:
                 print(Fore.RED + "You busted! Dealer wins 😭.")
-                # returning the player hand even though they best 
+                # returning the player hand even though they best
                 return player_hand
                 if not play_again():
                     print(Style.BRIGHT + "\nThanks for playing this "
                           "Black Jack Game! 🥰 ")
                     exit()
-                # return "busted" - THIS CAUSED AN ISSUE
                 # if player selects "s" then current hand is held
         elif action == 's':
             return player_hand
@@ -226,7 +217,8 @@ def show_winner(player_hand, dealer_hand):
 
 def play_again():
     while True:
-        again = input(Fore.BLUE + "\nDo you want to play again? (y/n) 😜: ").lower()
+        again = input(Fore.BLUE + "\nDo you want to play again?"
+                      "(y/n) 😜: ").lower()
         if again == 'y':
             return True
         elif again == 'n':
