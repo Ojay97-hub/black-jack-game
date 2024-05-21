@@ -62,7 +62,6 @@ def calculate_hand(hand):
     total = 0
     num_aces = 0
     for card in hand:
-        print(card)
         if card['value'] in ['King', 'Queen', 'Jack']:
             total += 10
         elif card['value'] == 'Ace':
@@ -142,6 +141,9 @@ def players_turn(deck, player_hand, dealer_hand):
                 # this calculates if players hand is greater than 21 = bust
             if calculate_hand(player_hand) > 21:
                 print("You busted! Dealer wins.")
+                if not play_again():
+                    print("\nThanks for playing this Black Jack Game!")
+                    exit()
                 # return "busted" - THIS CAUSED AN ISSUE
                 # if player selects "s" then current hand is held
         elif action == 's':
@@ -215,7 +217,7 @@ def show_winner(player_hand, dealer_hand):
 
 def play_again():
     while True:
-        again = input("Do you want to play again? (y/n): ").lower()
+        again = input("\nDo you want to play again? (y/n): ").lower()
         if again == 'y':
             return True
         elif again == 'n':
@@ -225,8 +227,8 @@ def play_again():
 
 
 # main function to start game
-# if __name__ == "__main__"
-def main():
+
+if __name__ == "__main__":
     display_rules()
     while True:
         deck = create_deck()
@@ -236,7 +238,5 @@ def main():
             dealer_hand = dealers_turn(deck, dealer_hand)
             show_winner(player_hand, dealer_hand)
         if not play_again():
+            print("\nThanks for playing this Black Jack Game!")
             break
-
-
-main()
