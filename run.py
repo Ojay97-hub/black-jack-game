@@ -26,7 +26,6 @@ def display_rules():
     print("- The dealer will hit until they reach 17 or higher.")
     print("- If you and the dealer tie, this is called a push "
           "and no one wins.\n")
-    
 
 
 """
@@ -191,12 +190,12 @@ def show_winner(player_hand, dealer_hand):
     player_total = calculate_hand(player_hand)
     dealer_total = calculate_hand(dealer_hand)
 # shows the dealers hand total
-    print(Fore.RED + "\nDealer's hand 🤯:")
+    print(Fore.RED + "\nDealer's hand 🤖:")
     for card in dealer_hand:
         print(f"{card['value']} of {card['suit']}")
     print("Dealer's total: ", dealer_total)
 # shows the player hands total
-    print(Fore.GREEN + "\nYour hand 🥳 :")
+    print(Fore.GREEN + "\nYour hand 🤠:")
     for card in player_hand:
         print(f"{card['value']} of {card['suit']}")
     print("Your total: ", player_total)
@@ -218,7 +217,7 @@ def show_winner(player_hand, dealer_hand):
 def play_again():
     while True:
         again = input(Fore.BLUE + "\nDo you want to play again?"
-                      "(y/n) 😜: ").lower()
+                      "(y/n) 😎: ").lower()
         if again == 'y':
             return True
         elif again == 'n':
