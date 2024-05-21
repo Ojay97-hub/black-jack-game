@@ -97,11 +97,11 @@ def deal_cards(deck, nums_cards=2):
         player_hand.append(deck.pop())
         dealer_hand.append(deck.pop())
     #  print the dealers hand so that the user can see
-    print(Fore.RED + "Dealer's hand:")
+    print(Fore.RED + "Dealer's hand 😅: ")
     for card in dealer_hand:
         print(f"{card['value']} of {card['suit']}")
     # print the players hand so that they know their values
-    print(Fore.GREEN + "\nYour hand:")
+    print(Fore.GREEN + "\nYour hand 🫣 : ")
     for card in player_hand:
         print(f"{card['value']} of {card['suit']}")
     # call dealers turn
@@ -136,20 +136,20 @@ def dealers_turn(deck, dealer_hand):
 def players_turn(deck, player_hand, dealer_hand):
     while True:
         action = input(Fore.MAGENTA + "\nDo you want to hit or stand? "
-                       "(h/s): ").lower()
+                       "(h/s) 🤨: ").lower()
         if action == 'h':
             player_hand.append(deck.pop())
-            print(Fore.GREEN + "\nYour hand: ")
+            print(Fore.GREEN + "\nYour hand 😳 : ")
             # a loop that iterates over each card in hand
             for card in player_hand:
                 # uses a f-string to show value of card
                 print(f"{card['value']} of {card['suit']}")
                 # this calculates if players hand is greater than 21 = bust
             if calculate_hand(player_hand) > 21:
-                print(Fore.RED + "You busted! Dealer wins.")
+                print(Fore.RED + "You busted! Dealer wins 😭.")
                 if not play_again():
                     print(Style.BRIGHT + "\nThanks for playing this "
-                          "Black Jack Game!")
+                          "Black Jack Game! 🥰 ")
                     exit()
                 # return "busted" - THIS CAUSED AN ISSUE
                 # if player selects "s" then current hand is held
@@ -157,7 +157,7 @@ def players_turn(deck, player_hand, dealer_hand):
             return player_hand
             # this ensures a valid input is entered
         else:
-            print("Invalid input. Please enter 'h' to hit or 's' to stand.")
+            print("Invalid input. Please enter 'h' to hit or 's' to stand. 😇")
 
 
 """
@@ -198,19 +198,19 @@ def show_winner(player_hand, dealer_hand):
     player_total = calculate_hand(player_hand)
     dealer_total = calculate_hand(dealer_hand)
 # shows the dealers hand total
-    print(Fore.RED + "\nDealer's hand:")
+    print(Fore.RED + "\nDealer's hand 🤯:")
     for card in dealer_hand:
         print(f"{card['value']} of {card['suit']}")
     print("Dealer's total: ", dealer_total)
 # shows the player hands total
-    print(Fore.GREEN + "\nYour hand:")
+    print(Fore.GREEN + "\nYour hand 🥳 :")
     for card in player_hand:
         print(f"{card['value']} of {card['suit']}")
     print("Your total: ", player_total)
 # Displays who the winner is
     winner = calculate_winner(player_hand, dealer_hand)
     if winner == "push":
-        print(Fore.CYAN + "It's a push! Go again to get a winner!.")
+        print(Fore.CYAN + "It's a push! Go again to get a winner! 😱 .")
     else:
         print(f"The winner is {winner.capitalize()}!")
 
@@ -225,13 +225,13 @@ def show_winner(player_hand, dealer_hand):
 def play_again():
     while True:
         again = input(Fore.BLUE + "\nDo you want to play again? "
-                      "(y/n): ").lower()
+                      "(y/n) 😜: ").lower()
         if again == 'y':
             return True
         elif again == 'n':
             return False
         else:
-            print("Invalid input. Please enter 'y' for yes or 'n' for no.")
+            print("Invalid input. Please enter 'y' for yes or 'n' for no 😣.")
 
 
 # main function to start game
