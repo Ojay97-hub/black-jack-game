@@ -90,11 +90,11 @@ def deal_cards(deck, nums_cards=2):
         player_hand.append(deck.pop())
         dealer_hand.append(deck.pop())
     #  print the dealers hand so that the user can see
-    print(Fore.RED + "Dealer's hand 😅: ")
+    print(Fore.RED + "Dealer's hand 😅 ")
     for card in dealer_hand:
         print(f"{card['value']} of {card['suit']}")
     # print the players hand so that they know their values
-    print(Fore.GREEN + "\nYour hand 🫣 : ")
+    print(Fore.GREEN + "\nYour hand 🫣 ")
     for card in player_hand:
         print(f"{card['value']} of {card['suit']}")
     return player_hand, dealer_hand
@@ -127,10 +127,10 @@ def dealers_turn(deck, dealer_hand):
 def players_turn(deck, player_hand, dealer_hand):
     while True:
         action = input(Fore.MAGENTA + "\nDo you want to hit or stand? "
-                       "(h/s) 🤨: ").lower()
+                       "(h/s) 🤨 ").lower()
         if action == 'h':
             player_hand.append(deck.pop())
-            print(Fore.GREEN + "\nYour hand 😳 : ")
+            print(Fore.GREEN + "\nYour hand 😳 ")
             # a loop that iterates over each card in hand
             for card in player_hand:
                 # uses a f-string to show value of card
@@ -190,12 +190,12 @@ def show_winner(player_hand, dealer_hand):
     player_total = calculate_hand(player_hand)
     dealer_total = calculate_hand(dealer_hand)
 # shows the dealers hand total
-    print(Fore.RED + "\nDealer's hand 🤖:")
+    print(Fore.RED + "\nDealer's hand 🤖 ")
     for card in dealer_hand:
         print(f"{card['value']} of {card['suit']}")
     print("Dealer's total: ", dealer_total)
 # shows the player hands total
-    print(Fore.GREEN + "\nYour hand 🤠:")
+    print(Fore.GREEN + "\nYour hand 🤠 ")
     for card in player_hand:
         print(f"{card['value']} of {card['suit']}")
     print("Your total: ", player_total)
@@ -217,7 +217,7 @@ def show_winner(player_hand, dealer_hand):
 def play_again():
     while True:
         again = input(Fore.BLUE + "\nDo you want to play again?"
-                      "(y/n) 😎: ").lower()
+                      "(y/n) 😎 ").lower()
         if again == 'y':
             return True
         elif again == 'n':
