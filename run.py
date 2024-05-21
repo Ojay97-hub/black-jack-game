@@ -147,6 +147,8 @@ def players_turn(deck, player_hand, dealer_hand):
                 # this calculates if players hand is greater than 21 = bust
             if calculate_hand(player_hand) > 21:
                 print(Fore.RED + "You busted! Dealer wins 😭.")
+                # returning the player hand even though they best 
+                return player_hand
                 if not play_again():
                     print(Style.BRIGHT + "\nThanks for playing this "
                           "Black Jack Game! 🥰 ")
@@ -224,8 +226,7 @@ def show_winner(player_hand, dealer_hand):
 
 def play_again():
     while True:
-        again = input(Fore.BLUE + "\nDo you want to play again? "
-                      "(y/n) 😜: ").lower()
+        again = input(Fore.BLUE + "\nDo you want to play again? (y/n) 😜: ").lower()
         if again == 'y':
             return True
         elif again == 'n':
