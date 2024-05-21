@@ -1,10 +1,10 @@
+# import random for shuffling of cards
+import random
 # importing colorama to add colour to text
 import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 
-# import random for shuffling of cards
-import random
 
 # Using balsamiq I have created a function flow for the game
 # functions follow the logic of each stage of the game
@@ -19,8 +19,8 @@ import random
 
 
 def display_rules():
-    print("WELCOME TO BLACK JACK!\n")
-    print("RULES: ")
+    print(Style.BRIGHT + "WELCOME TO BLACK JACK!\n")
+    print(Back.RED + "RULES: ")
     print("- To win and beat the dealer you need to get to 21 "
           "without going over.")
     print("- Card values of King, Queen, and Jack are worth 10.")
@@ -97,11 +97,11 @@ def deal_cards(deck, nums_cards=2):
         player_hand.append(deck.pop())
         dealer_hand.append(deck.pop())
     #  print the dealers hand so that the user can see
-    print("Dealer's hand:")
+    print(Fore.RED + "Dealer's hand:")
     for card in dealer_hand:
         print(f"{card['value']} of {card['suit']}")
     # print the players hand so that they know their values
-    print("\nYour hand:")
+    print(Fore.GREEN + "\nYour hand:")
     for card in player_hand:
         print(f"{card['value']} of {card['suit']}")
     # call dealers turn
@@ -135,10 +135,11 @@ def dealers_turn(deck, dealer_hand):
 
 def players_turn(deck, player_hand, dealer_hand):
     while True:
-        action = input("Do you want to hit or stand? (h/s): ").lower()
+        action = input(Fore.MAGENTA + "\nDo you want to hit or stand? "
+                       "(h/s): ").lower()
         if action == 'h':
             player_hand.append(deck.pop())
-            print("\nYour hand: ")
+            print(Fore.GREEN + "\nYour hand: ")
             # a loop that iterates over each card in hand
             for card in player_hand:
                 # uses a f-string to show value of card
@@ -147,7 +148,8 @@ def players_turn(deck, player_hand, dealer_hand):
             if calculate_hand(player_hand) > 21:
                 print(Fore.RED + "You busted! Dealer wins.")
                 if not play_again():
-                    print("\nThanks for playing this Black Jack Game!")
+                    print(Style.BRIGHT + "\nThanks for playing this "
+                          "Black Jack Game!")
                     exit()
                 # return "busted" - THIS CAUSED AN ISSUE
                 # if player selects "s" then current hand is held
@@ -196,19 +198,19 @@ def show_winner(player_hand, dealer_hand):
     player_total = calculate_hand(player_hand)
     dealer_total = calculate_hand(dealer_hand)
 # shows the dealers hand total
-    print("\nDealer's hand:")
+    print(Fore.RED + "\nDealer's hand:")
     for card in dealer_hand:
         print(f"{card['value']} of {card['suit']}")
     print("Dealer's total: ", dealer_total)
 # shows the player hands total
-    print("\nYour hand:")
+    print(Fore.GREEN + "\nYour hand:")
     for card in player_hand:
         print(f"{card['value']} of {card['suit']}")
     print("Your total: ", player_total)
 # Displays who the winner is
     winner = calculate_winner(player_hand, dealer_hand)
     if winner == "push":
-        print("It's a push! Go again to get a winner!.")
+        print(Fore.CYAN + "It's a push! Go again to get a winner!.")
     else:
         print(f"The winner is {winner.capitalize()}!")
 
@@ -222,7 +224,8 @@ def show_winner(player_hand, dealer_hand):
 
 def play_again():
     while True:
-        again = input("\nDo you want to play again? (y/n): ").lower()
+        again = input(Fore.BLUE + "\nDo you want to play again? "
+                      "(y/n): ").lower()
         if again == 'y':
             return True
         elif again == 'n':
@@ -243,5 +246,5 @@ if __name__ == "__main__":
             dealer_hand = dealers_turn(deck, dealer_hand)
             show_winner(player_hand, dealer_hand)
         if not play_again():
-            print("\nThanks for playing this Black Jack Game!")
+            print(Style.BRIGHT + "\nThanks for playing this Black Jack Game!")
             break
