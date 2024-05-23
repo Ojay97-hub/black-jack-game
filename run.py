@@ -126,7 +126,7 @@ def dealers_turn(deck, dealer_hand):
 
 def players_turn(deck, player_hand, dealer_hand):
     while True:
-        action = input(Fore.MAGENTA + "\nDo you want to hit or stand? "
+        action = input(Fore.YELLOW + "\nDo you want to hit or stand? "
                        "(h/s) 🤨 ").lower()
         if action == 'h':
             player_hand.append(deck.pop())
@@ -216,7 +216,7 @@ def show_winner(player_hand, dealer_hand):
 
 def play_again():
     while True:
-        again = input(Fore.BLUE + "\nDo you want to play again?"
+        again = input(Fore.CYAN + "\nDo you want to play again?"
                       "(y/n) 😎 ").lower()
         if again == 'y':
             return True
