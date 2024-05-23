@@ -39,7 +39,7 @@ The features follow this balsamiq flowchart:
 
 ### VALIDATOR TESTING
 
-- PEP8
+- FLAKE8 states "no problems"
 
 ### DEPLOYMENT
 
