@@ -2,14 +2,15 @@
 
 ## HOW TO PLAY
 
+How to play is set out in the rules:
+![screenshot of heroku deployment](./images/heroku-deployed.png)
+
 Following the guidelines set out by, "https://www.blackjackapprenticeship.com/how-to-play-blackjack/" with a few omissions of:
 
 - Wagering
 - Betting
 - Doubling Down
 - Splitting
-
-How to play is set out in the rules:
 
 ## FEATURES
 
@@ -44,7 +45,13 @@ The features follow this balsamiq flowchart:
 
 This project was deployed using code institutes python template for gitpod and then onto Heroku.
 
-- Steps for deployment:
+#### Steps for deployment:
+
+- Fork/clone the repository from my github: https://github.com/Ojay97-hub/black-jack-game
+- Go to heroku and create new app
+- Set buildbacks in order of Python and NodeJS
+- Link Heroku app to github repository
+- Click on deploy
 
 ### CREDITS
 
