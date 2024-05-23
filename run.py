@@ -137,7 +137,7 @@ def players_turn(deck, player_hand, dealer_hand):
                 print(f"{card['value']} of {card['suit']}")
                 # this calculates if players hand is greater than 21 = bust
             if calculate_hand(player_hand) > 21:
-                print(Fore.RED + "You busted! Dealer wins 😭.")
+                print(Fore.RED + "You busted! Dealer wins 😭 ")
                 # returning the player hand even though they best
                 return player_hand
                 if not play_again():
@@ -202,7 +202,7 @@ def show_winner(player_hand, dealer_hand):
 # Displays who the winner is
     winner = calculate_winner(player_hand, dealer_hand)
     if winner == "push":
-        print(Fore.CYAN + "It's a push! Go again to get a winner! 😱 .")
+        print(Fore.CYAN + "It's a push! Go again to get a winner! 😱 ")
     else:
         print(f"The winner is {winner.capitalize()}!")
 
@@ -223,7 +223,7 @@ def play_again():
         elif again == 'n':
             return False
         else:
-            print("Invalid input. Please enter 'y' for yes or 'n' for no 😣.")
+            print("Invalid input. Please enter 'y' for yes or 'n' for no 😣 ")
 
 
 # main function to start game
