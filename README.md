@@ -33,7 +33,7 @@ The existing features are as follows:
 
 2. Play against computer:
 
-- You play against the dealer who hits until its hand its at least 17
+- You play against the dealer who hits until its hand reaches 17
 
 3. Accepts user input:
 
@@ -70,11 +70,13 @@ As well as:
 
 #### SOLVED BUGS
 
-- Returning "BUSTED" as a string in the players turn:
-  Caused a type error because it changed the expected return type of the function. The code expected the players_turn to return a list of cards (the player's hand) rather than string.
+1. Returning "BUSTED" as a string in the players turn:
 
-- When busted and player plays again - hands are not displayed:
-  This was due to the fact that return player's hand was missing, as this ensures hands are displayed.
+- Caused a type error because it changed the expected return type of the function. The code expected the players_turn to return a list of cards (the player's hand) rather than string.
+
+2. When busted and player plays again - hands are not displayed:
+
+- This was due to the fact that return player's hand was missing, as this ensures hands are displayed.
 
 ### REMAINING BUGS
 
