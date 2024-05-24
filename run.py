@@ -9,6 +9,8 @@ colorama.init(autoreset=True)
 """
 - Display's the rules of the game to the user.
 - The function uses primarily print statements.
+- Gives information on card values, player actions of hit/stand
+  and overall objective of the game.
 
 """
 
@@ -30,7 +32,11 @@ def display_rules():
 
 """
 - A card game needs a deck so this creates the game deck.
-- The function uses lists and applies the random module for shuffling.
+- The function uses a list of dictionaries that represents
+  each card in the deck
+- Each card is represented with the value and suit i.e, 8 of Hearts
+- Applies the random module for shuffling.
+- Returns a shuffled list of dictionaires which is the deck
 
 """
 
@@ -48,10 +54,12 @@ def create_deck():
 
 
 """
-- Calculate hand function is to assess the value of the hands dealt.
+- Calculate hand function is to assess the total value of the hands dealt.
 - Contains a while loop.
 - Contains list iteration with for loop.
-- Conditional statements for the ace calculations.
+- Conditional statements for the ace calculations:
+  if the hand contains aces and exceeds the value of 21,
+  the function converts the ace from 11 to 1.
 
 """
 
@@ -76,8 +84,10 @@ def calculate_hand(hand):
 
 """
 - This deal_cards function is to deal cards to player and dealer
+- As default only two cards are dealt
 - List manipulation is applied
-- results are printed so that user knows they have been dealt
+- Parameters are the deck and 2 cards to be dealt
+- Results are return so that player knows they have been dealt
 
 """
 
@@ -102,8 +112,10 @@ def deal_cards(deck, nums_cards=2):
 
 """
 - This is the dealers turn function
+- The dealer will draw cards until their value is at least 17
 - While loop
-- Appending the deck
+- Appends the dealers hand
+- Returns dealers hand
 
 """
 
@@ -118,8 +130,13 @@ def dealers_turn(deck, dealer_hand):
 """
 - This is the players turn function
 - Adds an action input for hit or stand
+- The player is prompted until they stand or bust
 - While loop
-- Appending the deck
+- Returns the players hand after drawing cards
+- Parameters are:
+  The deck to deal cards
+  The players hand to see their current hand
+  The dealers hand that is shown to player
 
 """
 
@@ -153,7 +170,13 @@ def players_turn(deck, player_hand, dealer_hand):
 
 
 """
-- This calculates the winner using if/else statements
+- This calculates the winner using if/else statements based on hand values
+- Does this by comparing dealers hand and players hand values
+- Parameters used are:
+  Player_hand - final hand
+  Dealers_hand - final hand
+- Returns the winner through a string that could be:
+  Player, Dealer, or Push
 
 """
 
@@ -179,9 +202,12 @@ def calculate_winner(player_hand, dealer_hand):
 
 
 """
-- Displaying the winner function
+- Displays the winner of the game
 - Shows dealers hand total and players hand total
 - Then announces Winner or announces Draw
+- Parameters:
+  player hand for players final hand
+  dealers hand for dealers final hand
 
 """
 
@@ -208,9 +234,9 @@ def show_winner(player_hand, dealer_hand):
 
 
 """
-- function to play again
-- asks if player wants to play again
-
+- Function to play again
+- Asks if player wants to play again
+- Returns a bool - True if play again - false if not
 """
 
 
@@ -226,7 +252,27 @@ def play_again():
             print("Invalid input. Please enter 'y' for yes or 'n' for no 😣 ")
 
 
-# main function to start game
+"""
+- Main function to start the game
+- Initiates the game by displaying the rules
+- Then enters a loop to play rounds of black jack until user decides otherwise
+
+The flow of the game:
+- Creates and shuffles deck
+- Deals out cards to dealer and player
+- Players turn = hit or stand
+- If player does not bust
+- Determines the winner and displays winner of round.
+- Prompts player to play again
+- The game ends when player doesn't want to play again
+
+Error handling:
+- If an exception occurs in the game, it is caught
+  and a message is displayed:
+  an error occurred and game will be restarted
+
+"""
+
 
 if __name__ == "__main__":
     display_rules()
