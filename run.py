@@ -137,6 +137,7 @@ def dealers_turn(deck, dealer_hand):
   The deck to deal cards
   The players hand to see their current hand
   The dealers hand that is shown to player
+- Ensures a valid input is entered
 
 """
 

@@ -29,9 +29,11 @@ The features follow this balsamiq flowchart:
 
 #### SOLVED BUGS
 
-- Return players hand when busted:
+- Returning "BUSTED" as a string in the players turn:
+  Caused a type error because it changed the expected return type of the function. The code expected the players_turn to return a list of cards (the player's hand) rather than string.
 
-- Returning busted as a string:
+- When busted and player plays again - hands are not displayed:
+  This was due to the fact that "return player's hand" was missing, as this ensures hands are displayed.
 
 ### REMAINING BUGS
 
@@ -39,7 +41,7 @@ The features follow this balsamiq flowchart:
 
 ### VALIDATOR TESTING
 
-- FLAKE8 states "no problems"
+I installed FLAKE8 which is adheres to pep8 stands which states: "no problems"
 
 ### DEPLOYMENT
 
