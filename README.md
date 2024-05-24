@@ -51,7 +51,7 @@ The existing features are as follows:
 
 ### FUTURE FEATURES
 
-Future features will ensure that the Black Jack game is played at its casino level that includes all of the standard features you would aexpect to see when playing at a casino in Las Vegas:
+Future features will ensure that the Black Jack game is played at its casino level that includes all of the standard features you would expect to see when playing at a casino in Las Vegas:
 
 - Wagering
 - Betting
@@ -84,7 +84,7 @@ As well as:
 
 ### VALIDATOR TESTING
 
-I installed FLAKE8 which adheres to pep8 stands which states: "no problems"
+I installed FLAKE8 which adheres to pep8 standards which states: "no problems"
 
 ### DEPLOYMENT
 
