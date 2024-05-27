@@ -87,15 +87,32 @@ No remaining bugs other than:
 
 I installed FLAKE8 which adheres to pep8 standards which states: "no problems"
 
+### INPUT TESTING
+
+For this project there are 2 inputs. 1 for hitting or standing and the 2nd is for playing again. Below are screenshots of these inputs being tested for; a letter, multiple letters, a number, multiple numbers, empty enter, spaces, and special characters:
+
+#### HIT OR STAND INPUT:
+
+#### PLAY AGAIN INPUT:
+
 ### DEPLOYMENT
 
 This project was deployed using code institutes python template from github for gitpod and then onto Heroku.
+
+#### Local deployment:
+
+- Copy code from github
+- paste into your chosen IDE
+- Make sure python is downloaded
+- Save it into your IDE
+- In terminal run the code i.e., python run.py
 
 #### Steps for deployment:
 
 - Fork/clone the repository from my github: https://github.com/Ojay97-hub/black-jack-game
 - Go to heroku and create new app
 - Set buildbacks in order of Python and NodeJS
+- Ensure to enter - port and 8000
 - Link Heroku app to github repository
 - Click on deploy
 
