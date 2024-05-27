@@ -1,7 +1,9 @@
 # BLACK JACK: LEVEL 1
 
 This is the classic and highly popular casino black jack game but stripped down to its basic functions hence the name, "Black Jack: Level 1". It excludes the premise of betting and simply allows the player to hit or stand in order to beat the dealer.
+
 ![screenshot of heroku deployment](./images/screenshots.png)
+
 You can access the game on heroku via this link:
 
 - https://black-jack-lvl1-25fdd631e5ae.herokuapp.com/

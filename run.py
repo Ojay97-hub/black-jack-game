@@ -6,16 +6,14 @@ from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 
 
-"""
-- Display's the rules of the game to the user.
-- The function uses primarily print statements.
-- Gives information on card values, player actions of hit/stand
-  and overall objective of the game.
-
-"""
-
-
 def display_rules():
+    """
+    - Display's the rules of the game to the user.
+    - The function uses primarily print statements.
+    - Gives information on card values, player actions of hit/stand
+    and overall objective of the game.
+
+    """
     print(Style.BRIGHT + "WELCOME TO BLACK JACK!\n")
     print(Back.RED + "RULES: ")
     print("- To win and beat the dealer you need to get to 21 "
@@ -30,18 +28,16 @@ def display_rules():
           "and no one wins.\n")
 
 
-"""
-- A card game needs a deck so this creates the game deck.
-- The function uses a list of dictionaries that represents
-  each card in the deck
-- Each card is represented with the value and suit i.e, 8 of Hearts
-- Applies the random module for shuffling.
-- Returns a shuffled list of dictionaires which is the deck
-
-"""
-
-
 def create_deck():
+    """
+    - A card game needs a deck so this creates the game deck.
+    - The function uses a list of dictionaries that represents
+    each card in the deck
+    - Each card is represented with the value and suit i.e, 8 of Hearts
+    - Applies the random module for shuffling.
+    - Returns a shuffled list of dictionaires which is the deck
+
+    """
     values = ['Ace', 'King', 'Queen', 'Jack', '10', '9', '8', '7', '6', '5',
               '4', '3', '2']
     suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
@@ -53,18 +49,16 @@ def create_deck():
     return deck
 
 
-"""
-- Calculate hand function is to assess the total value of the hands dealt.
-- Contains a while loop.
-- Contains list iteration with for loop.
-- Conditional statements for the ace calculations:
-  if the hand contains aces and exceeds the value of 21,
-  the function converts the ace from 11 to 1.
-
-"""
-
-
 def calculate_hand(hand):
+    """
+    - Calculate hand function is to assess the total value of the hands dealt.
+    - Contains a while loop.
+    - Contains list iteration with for loop.
+    - Conditional statements for the ace calculations:
+    if the hand contains aces and exceeds the value of 21,
+    the function converts the ace from 11 to 1.
+
+    """
     total = 0
     num_aces = 0
     for card in hand:
@@ -82,17 +76,15 @@ def calculate_hand(hand):
     return total
 
 
-"""
-- This deal_cards function is to deal cards to player and dealer
-- As default only two cards are dealt
-- List manipulation is applied
-- Parameters are the deck and 2 cards to be dealt
-- Results are return so that player knows they have been dealt
-
-"""
-
-
 def deal_cards(deck, nums_cards=2):
+    """
+    - This deal_cards function is to deal cards to player and dealer
+    - As default only two cards are dealt
+    - List manipulation is applied
+    - Parameters are the deck and 2 cards to be dealt
+    - Results are return so that player knows they have been dealt
+
+    """
     # empty lists as hands
     player_hand = []
     dealer_hand = []
@@ -110,39 +102,35 @@ def deal_cards(deck, nums_cards=2):
     return player_hand, dealer_hand
 
 
-"""
-- This is the dealers turn function
-- The dealer will draw cards until their value is at least 17
-- While loop
-- Appends the dealers hand
-- Returns dealers hand
-
-"""
-
-
 def dealers_turn(deck, dealer_hand):
+    """
+    - This is the dealers turn function
+    - The dealer will draw cards until their value is at least 17
+    - While loop
+    - Appends the dealers hand
+    - Returns dealers hand
+
+    """
     # if dealers hand is less than 17 dealer will hit
     while calculate_hand(dealer_hand) < 17:
         dealer_hand.append(deck.pop())
     return dealer_hand
 
 
-"""
-- This is the players turn function
-- Adds an action input for hit or stand
-- The player is prompted until they stand or bust
-- While loop
-- Returns the players hand after drawing cards
-- Parameters are:
-  The deck to deal cards
-  The players hand to see their current hand
-  The dealers hand that is shown to player
-- Ensures a valid input is entered
-
-"""
-
-
 def players_turn(deck, player_hand, dealer_hand):
+    """
+    - This is the players turn function
+    - Adds an action input for hit or stand
+    - The player is prompted until they stand or bust
+    - While loop
+    - Returns the players hand after drawing cards
+    - Parameters are:
+    The deck to deal cards
+    The players hand to see their current hand
+    The dealers hand that is shown to player
+    - Ensures a valid input is entered
+
+    """
     while True:
         action = input(Fore.YELLOW + "\nDo you want to hit or stand? "
                        "(h/s) 🤨 ").lower()
@@ -170,19 +158,17 @@ def players_turn(deck, player_hand, dealer_hand):
             print("Invalid input. Please enter 'h' to hit or 's' to stand. 😇")
 
 
-"""
-- This calculates the winner using if/else statements based on hand values
-- Does this by comparing dealers hand and players hand values
-- Parameters used are:
-  Player_hand - final hand
-  Dealers_hand - final hand
-- Returns the winner through a string that could be:
-  Player, Dealer, or Push
-
-"""
-
-
 def calculate_winner(player_hand, dealer_hand):
+    """
+    - This calculates the winner using if/else statements based on hand values
+    - Does this by comparing dealers hand and players hand values
+    - Parameters used are:
+    Player_hand - final hand
+    Dealers_hand - final hand
+    - Returns the winner through a string that could be:
+    Player, Dealer, or Push
+
+    """
     player_total = calculate_hand(player_hand)
     dealer_total = calculate_hand(dealer_hand)
     # if players hand is greater than 21 = dealer is winner
@@ -202,18 +188,16 @@ def calculate_winner(player_hand, dealer_hand):
         return "dealer"
 
 
-"""
-- Displays the winner of the game
-- Shows dealers hand total and players hand total
-- Then announces Winner or announces Draw
-- Parameters:
-  player hand for players final hand
-  dealers hand for dealers final hand
-
-"""
-
-
 def show_winner(player_hand, dealer_hand):
+    """
+    - Displays the winner of the game
+    - Shows dealers hand total and players hand total
+    - Then announces Winner or announces Draw
+    - Parameters:
+    player hand for players final hand
+    dealers hand for dealers final hand
+
+    """
     player_total = calculate_hand(player_hand)
     dealer_total = calculate_hand(dealer_hand)
 # shows the dealers hand total
@@ -234,14 +218,12 @@ def show_winner(player_hand, dealer_hand):
         print(f"The winner is {winner.capitalize()}!")
 
 
-"""
-- Function to play again
-- Asks if player wants to play again
-- Returns a bool - True if play again - false if not
-"""
-
-
 def play_again():
+    """
+    - Function to play again
+    - Asks if player wants to play again
+    - Returns a bool - True if play again - false if not
+    """
     while True:
         again = input(Fore.CYAN + "\nDo you want to play again?"
                       "(y/n) 😎 ").lower()
@@ -253,29 +235,28 @@ def play_again():
             print("Invalid input. Please enter 'y' for yes or 'n' for no 😣 ")
 
 
-"""
-- Main function to start the game
-- Initiates the game by displaying the rules
-- Then enters a loop to play rounds of black jack until user decides otherwise
-
-The flow of the game:
-- Creates and shuffles deck
-- Deals out cards to dealer and player
-- Players turn = hit or stand
-- If player does not bust
-- Determines the winner and displays winner of round.
-- Prompts player to play again
-- The game ends when player doesn't want to play again
-
-Error handling:
-- If an exception occurs in the game, it is caught
-  and a message is displayed:
-  an error occurred and game will be restarted
-
-"""
-
-
 if __name__ == "__main__":
+    """
+    - Main function to start the game
+    - Initiates the game by displaying the rules
+    - Then enters a loop to play rounds of black jack
+      until user decides otherwise
+
+    The flow of the game:
+    - Creates and shuffles deck
+    - Deals out cards to dealer and player
+    - Players turn = hit or stand
+    - If player does not bust
+    - Determines the winner and displays winner of round.
+    - Prompts player to play again
+    - The game ends when player doesn't want to play again
+
+    Error handling:
+    - If an exception occurs in the game, it is caught
+    and a message is displayed:
+    an error occurred and game will be restarted
+
+    """
     display_rules()
     while True:
         try:
