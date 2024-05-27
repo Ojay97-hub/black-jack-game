@@ -155,7 +155,8 @@ def players_turn(deck, player_hand, dealer_hand):
             return player_hand
             # this ensures a valid input is entered
         else:
-            print("Invalid input. Please enter 'h' to hit or 's' to stand. 😇")
+            print(Fore.RED + "Invalid input. Please enter 'h' to hit or 's' "
+                             " to stand. 😇")
 
 
 def calculate_winner(player_hand, dealer_hand):
@@ -232,7 +233,8 @@ def play_again():
         elif again == 'n':
             return False
         else:
-            print("Invalid input. Please enter 'y' for yes or 'n' for no 😣 ")
+            print(Fore.RED + "Invalid input. Please enter 'y' for yes or 'n'"
+                             " for no 😣 ")
 
 
 if __name__ == "__main__":
