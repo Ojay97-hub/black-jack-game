@@ -29,24 +29,24 @@ The features follow this balsamiq flowchart:
 
 The existing features are as follows:
 
-1. Random deck creation:
+#### Random deck creation:
 
 - A new shuffled deck is created upon every round
 
-2. Play against computer:
+#### Play against computer:
 
 - You play against the dealer who hits until its hand reaches 17
 
-3. Accepts user input:
+#### Accepts user input:
 
 - Opting to hit or stand
 - Opting to play again
 
-4. Maintains value of cards dealt:
+#### Maintains value of cards dealt:
 
 - The game knows the total value of the cards that it uses when determining the winner
 
-5. Input validation and error handling:
+#### Input validation and error handling:
 
 - The game ensures you have entered the correct values when hitting (h) or standing (s)
 - The games does the same for play again values with (y) and (n)
@@ -59,9 +59,6 @@ Future features will ensure that the Black Jack game is played at its casino lev
 - Betting
 - Doubling Down
 - Splitting
-
-As well as:
-
 - Choosing amount of rounds
 - How many players
 - Total winnings and loses
@@ -72,17 +69,19 @@ As well as:
 
 #### SOLVED BUGS
 
-1. Returning "BUSTED" as a string in the players turn:
+##### Returning "BUSTED" as a string in the players turn:
 
-- Caused a type error because it changed the expected return type of the function. The code expected the players_turn to return a list of cards (the player's hand) rather than string.
+Caused a type error because it changed the expected return type of the function. The code expected the players_turn to return a list of cards (the player's hand) rather than string.
 
-2. When busted and player plays again - hands are not displayed:
+##### When busted and player plays again - hands are not displayed:
 
-- This was due to the fact that return player's hand was missing, as this ensures hands are displayed.
+This was due to the fact that return player's hand was missing, as this ensures hands are displayed.
 
 ### REMAINING BUGS
 
-- No remaining bugs
+No remaining bugs other than:
+
+- Emojis are clipped on safari and firefox
 
 ### VALIDATOR TESTING
 
