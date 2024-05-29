@@ -6,14 +6,14 @@ This is the classic and highly popular casino black jack game but stripped down 
 
 **ACCESS GAME**
 
-- https://black-jack-lvl1-25fdd631e5ae.herokuapp.com/
+- [Play BLack Jack: Level 1](https://black-jack-lvl1-25fdd631e5ae.herokuapp.com/)
 
 ## HOW TO PLAY
 
 How to play is set out in the rules:
 ![screenshot of heroku deployment](./images/heroku-deployed.png)
 
-Following the guidelines set out by, "https://www.blackjackapprenticeship.com/how-to-play-blackjack/" with a few omissions of:
+Following the guidelines set out by [Blackjack Apprenticeship](https://www.blackjackapprenticeship.com/how-to-play-blackjack/) with a few omissions of:
 
 - Wagering
 - Betting
