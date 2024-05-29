@@ -93,7 +93,13 @@ For this project there are 2 inputs. 1 for hitting or standing and the 2nd is fo
 
 #### HIT OR STAND INPUT:
 
+As you can see below the inputs work correctly and reminds user to input 'h' for hit and 's' for stand.
+![testing the input for hit or stand](/images/hit_or_stand_test.png)
+
 #### PLAY AGAIN INPUT:
+
+As you can see below the inputs work correctly and reminds user to input 'y' for yes and 'n' for no.
+![testing the input for hit or stand](/images/play_again_test.png)
 
 ### DEPLOYMENT
 
