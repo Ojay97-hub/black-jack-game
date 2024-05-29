@@ -140,4 +140,3 @@ This project was deployed using code institutes python template from github for 
 - [Code Institute](https://codeinstitute.net) for providing the Python template.
 - [Blackjack Apprenticeship](https://www.blackjackapprenticeship.com/how-to-play-blackjack/) for the comprehensive gameplay guidelines.
 - [Beau Carnes' video tutorial](https://youtu.be/aryte85bt_M?si=sazubDrzIn9JQyaX) and [source code](https://replit.com/@BeauCarnes/blackjack-python#main.py) for guidance.
-- [FreeCodeCamp](https://www.freecodecamp.org/news/python-switch-statement-switch-case-example/) for the match case refactor guidance.
