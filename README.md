@@ -128,15 +128,16 @@ This project was deployed using code institutes python template from github for 
 
 #### Steps for deployment:
 
-- Fork/clone the repository from my github: https://github.com/Ojay97-hub/black-jack-game
-- Go to heroku and create new app
-- Set buildbacks in order of Python and NodeJS
-- Ensure to enter - port and 8000
-- Link Heroku app to github repository
-- Click on deploy
+1. **Fork/clone the repository**: From my github https://github.com/Ojay97-hub/black-jack-game
+2. **Create a New Heroku App** - Go to heroku and create new app by clicking 'New'. Enter app name and your region.
+3. **Set Buildpacks**: In the config vars set buildbacks in order of Python and NodeJS in that order
+4. **Configure the Port**: Enter PORT as a key with a value of 8000
+5. **Link to GitHub**: Set github as the deployment method and click 'connect' to link Heroku app to github repository
+6. **Deploy the Application**: Click on deploy by choosing the main branch and click 'deploy branch'. Once it has downloaded click 'open app' to access the app page
 
 ### CREDITS
 
 - Code institute for the python template
 - https://www.blackjackapprenticeship.com/how-to-play-blackjack/
 - Had a go a following along with Beau Carnes video: https://youtu.be/aryte85bt_M?si=sazubDrzIn9JQyaX who created a follow along tutorial which I then completely adapted to my own code, his source code is: https://replit.com/@BeauCarnes/blackjack-python#main.py
+- https://www.freecodecamp.org/news/python-switch-statement-switch-case-example/ - used this for guidance on the match case refactor for the calculate hand function
