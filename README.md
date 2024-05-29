@@ -137,7 +137,7 @@ This project was deployed using code institutes python template from github for 
 
 ### CREDITS
 
-- Code institute for the python template
-- https://www.blackjackapprenticeship.com/how-to-play-blackjack/
-- Had a go a following along with Beau Carnes video: https://youtu.be/aryte85bt_M?si=sazubDrzIn9JQyaX who created a follow along tutorial which I then completely adapted to my own code, his source code is: https://replit.com/@BeauCarnes/blackjack-python#main.py
-- https://www.freecodecamp.org/news/python-switch-statement-switch-case-example/ - used this for guidance on the match case refactor for the calculate hand function
+- [Code Institute](https://codeinstitute.net) for providing the Python template.
+- [Blackjack Apprenticeship](https://www.blackjackapprenticeship.com/how-to-play-blackjack/) for the comprehensive gameplay guidelines.
+- [Beau Carnes' video tutorial](https://youtu.be/aryte85bt_M?si=sazubDrzIn9JQyaX) and [source code](https://replit.com/@BeauCarnes/blackjack-python#main.py) for guidance.
+- [FreeCodeCamp](https://www.freecodecamp.org/news/python-switch-statement-switch-case-example/) for the match case refactor guidance.
