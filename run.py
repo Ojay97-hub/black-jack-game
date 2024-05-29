@@ -161,7 +161,7 @@ def players_turn(deck, player_hand, dealer_hand):
 
 def calculate_winner(player_hand, dealer_hand):
     """
-    - This calculates the winner using if/else statements based on hand values
+    - This calculates the winner using match case statement
     - Does this by comparing dealers hand and players hand values
     - Parameters used are:
     Player_hand - final hand
@@ -172,21 +172,19 @@ def calculate_winner(player_hand, dealer_hand):
     """
     player_total = calculate_hand(player_hand)
     dealer_total = calculate_hand(dealer_hand)
-    # if players hand is greater than 21 = dealer is winner
-    if player_total > 21:
-        return "dealer"
-    # if dealers hand is greater than 21 = player is winner
-    elif dealer_total > 21:
-        return "player"
-    # if totals are the same result = push/draw
-    elif player_total == dealer_total:
-        return "push"
-    # if player total greater than dealer total = player
-    elif player_total > dealer_total:
-        return "player"
-    # vice versa for dealer
-    else:
-        return "dealer"
+
+    match (player_total > 21, dealer_total > 21, player_total == dealer_total,
+           player_total > dealer_total):
+        case (True, _, _, _):
+            return "dealer"
+        case (_, True, _, _):
+            return "player"
+        case (_, _, True, _):
+            return "push"
+        case (_, _, _, True):
+            return "player"
+        case _:
+            return "dealer"
 
 
 def show_winner(player_hand, dealer_hand):
