@@ -20,6 +20,14 @@ Following the guidelines set out by, "https://www.blackjackapprenticeship.com/ho
 - Doubling Down
 - Splitting
 
+## USER STORIES
+
+- As a user, I want to play an easy to access interactive game
+- As a user, I want a game to tell me how to play it clearly
+- As a user, I want a game to handle my inputs correctly and ensure smooth flow throughout
+- As a user, I want the option to play again when the game has drawn to a natural end
+- As a user, I want a game where I can practice the fundamentals of black jack
+
 ## FEATURES
 
 The features follow this balsamiq flowchart:
@@ -131,3 +139,4 @@ This project was deployed using code institutes python template from github for 
 
 - Code institute for the python template
 - https://www.blackjackapprenticeship.com/how-to-play-blackjack/
+- Had a go a following along with Beau Carnes video: https://youtu.be/aryte85bt_M?si=sazubDrzIn9JQyaX who created a follow along tutorial which I then completely adapted to my own code, his source code is: https://replit.com/@BeauCarnes/blackjack-python#main.py
