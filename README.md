@@ -4,7 +4,7 @@ This is the classic and highly popular casino black jack game but stripped down 
 
 ![screenshot of heroku deployment](./images/screenshots.png)
 
-You can access the game on heroku via this link:
+**ACCESS GAME**
 
 - https://black-jack-lvl1-25fdd631e5ae.herokuapp.com/
 
