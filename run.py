@@ -1,6 +1,24 @@
-# import random for shuffling of cards
+"""
+
+Modules:
+- random:
+This module implements pseudo-random number
+generators for various distributions.
+Used for shuffling the cards.
+
+- colorama:
+This module is used to produce colored terminal text
+and cursor positioning.
+
+Functions:
+- colorama.init(autoreset=True):
+Initializes the colorama module with auto-reset enabled,
+ensuring the text color and style auto
+resets after each printed statement.
+
+"""
+
 import random
-# importing colorama to add colour to text
 import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
