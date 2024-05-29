@@ -85,7 +85,12 @@ No remaining bugs other than:
 
 ### VALIDATOR TESTING
 
-I installed FLAKE8 which adheres to pep8 standards which states: "no problems"
+I installed FLAKE8 which adheres to pep8 standards which states: "no problems".
+
+#### Code Institute Pylinter:
+
+Code institutes python linter also shows the all clear
+![Code Institute Pylinter screenshot](/images/CI-pylinter.png)
 
 ### INPUT TESTING
 
